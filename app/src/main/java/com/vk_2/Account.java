@@ -10,20 +10,23 @@ public class Account {
     public long user_id;
 
     public void save(Context context) {
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         Editor editor = prefs.edit();
         editor.putString(Constants.TOKEN, access_token);
         editor.putLong(Constants.USER_ID, user_id);
-        editor.apply();
+        editor.commit();
     }
 
     public void restore(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        access_token = prefs.getString(Constants.TOKEN, null);
+        access_token = prefs.getString(Constants.TOKEN, "");
         user_id = prefs.getLong(String.valueOf(Constants.USER_ID), 0);
     }
 
     public void setAccess_token(String access_token) {
         this.access_token = access_token;
     }
+
+
 }

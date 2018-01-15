@@ -1,4 +1,4 @@
-package com.vk_2;
+package com.vk_2.Json;
 
 import android.os.AsyncTask;
 
@@ -12,7 +12,7 @@ import java.net.URL;
  * Created by User on 09.01.2018.
  */
 
-public class Parse extends AsyncTask<String,Void,String> {
+public class AsyncTaskGetJSON extends AsyncTask<String,Void,String> {
 
     HttpURLConnection urlConnection = null;
     BufferedReader reader = null;
@@ -20,7 +20,7 @@ public class Parse extends AsyncTask<String,Void,String> {
     public static String LOG_TAG = "my_log";
     String token;
 
-    public Parse(String ptoken) {
+    public AsyncTaskGetJSON(String ptoken) {
         this.token = ptoken;
     }
 

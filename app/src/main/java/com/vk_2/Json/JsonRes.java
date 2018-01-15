@@ -1,4 +1,4 @@
-package com.vk_2;
+package com.vk_2.Json;
 
 import java.util.concurrent.ExecutionException;
 
@@ -7,10 +7,10 @@ import java.util.concurrent.ExecutionException;
  */
 
 public class JsonRes {
-    String res(String url, String Token) {
+    public String res(String url, String Token) {
         String result = null;
         try {
-            result = new Parse(Token).execute(url).get();
+            result = new AsyncTaskGetJSON(Token).execute(url).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

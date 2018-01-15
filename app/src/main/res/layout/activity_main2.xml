@@ -1,29 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
     android:orientation="vertical"
-    tools:context="com.vk_2.Main2Activity">
+  >
 
-
-
-        <ImageView
-            android:id="@+id/profile_photo_imageview"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:padding="10dp"
-            android:src="@mipmap/ic_launcher_round"
-            />
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/first_name_textview"
-            android:padding="10dp"
-            android:layout_toRightOf="@+id/profile_photo_imageview"/>
+            android:orientation="horizontal"
+            android:padding="10dp">
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:padding="5dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/vk"
+                    android:textSize="10pt"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="sans-serif"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_custom"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/id_image"
+                    android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <android.support.v4.view.PagerTabStrip
+                    android:id="@+id/pager_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp" />/>
+        </android.support.v4.view.ViewPager>
 
 </LinearLayout>

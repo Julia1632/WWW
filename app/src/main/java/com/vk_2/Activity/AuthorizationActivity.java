@@ -1,6 +1,8 @@
-package com.vk_2;
+package com.vk_2.Activity;
 
 import android.util.Log;
+
+import com.vk_2.Utils;
 
 import java.net.URLEncoder;
 
@@ -10,7 +12,7 @@ import static android.content.ContentValues.TAG;
  * Created by User on 25.11.2017.
  */
 
-public class Auth {
+public class AuthorizationActivity {
     public static String redirect_url="https://oauth.vk.com/blank.html";
 
     public static String getUrl(String api_id, String settings){
@@ -26,7 +28,7 @@ public class Auth {
 
     public static String[] parseRedirectUrl(String url) throws Exception {
         //url is something like http://api.vkontakte.ru/blank.html#access_token=66e8f7a266af0dd477fcd3916366b17436e66af77ac352aeb270be99df7deeb&expires_in=0&user_id=7657164
-        String access_token=Utils.extractPattern(url, "access_token=(.*?)&");
+        String access_token= Utils.extractPattern(url, "access_token=(.*?)&");
         Log.i(TAG, "access_token=" + access_token);
         String user_id=Utils.extractPattern(url, "user_id=(\\d*)");
         Log.i(TAG, "user_id=" + user_id);
